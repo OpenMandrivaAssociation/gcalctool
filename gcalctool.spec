@@ -1,6 +1,6 @@
 Summary: GNOME desktop calculator
 Name: gcalctool
-Version: 5.9.14
+Version: 5.19.3
 Release: %mkrel 1
 License: GPL
 Group: Graphical desktop/GNOME
