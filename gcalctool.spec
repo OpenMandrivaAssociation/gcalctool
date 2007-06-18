@@ -10,6 +10,7 @@ Source1: gcalctool-32.png
 Source2: gcalctool-16.png
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: gtk2-devel
+BuildRequires: libGConf2-devel
 BuildRequires: flex
 BuildRequires: bison
 BuildRequires: scrollkeeper
