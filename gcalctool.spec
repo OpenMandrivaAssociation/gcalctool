@@ -1,6 +1,6 @@
 Summary: GNOME desktop calculator
 Name: gcalctool
-Version: 5.21.0
+Version: 5.21.1
 Release: %mkrel 1
 License: GPL
 Group: Graphical desktop/GNOME
@@ -11,6 +11,7 @@ Source2: gcalctool-16.png
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: gtk2-devel
 BuildRequires: libGConf2-devel
+BuildRequires: libglade2.0-devel
 BuildRequires: flex
 BuildRequires: bison
 BuildRequires: scrollkeeper
@@ -102,6 +103,7 @@ if [ -x %{_bindir}/scrollkeeper-update ]; then %{_bindir}/scrollkeeper-update -q
 %{_datadir}/applications/*
 %dir %{_datadir}/omf/%{name}
 %{_datadir}/omf/%{name}/%{name}-C.omf
+%{_datadir}/%name
 %{_menudir}/%name
 %{_liconsdir}/%name.png
 %{_iconsdir}/%name.png
