@@ -16,7 +16,6 @@ BuildRequires: flex
 BuildRequires: bison
 BuildRequires: scrollkeeper
 BuildRequires: gnome-doc-utils libxslt-proc
-BuildRequires: desktop-file-utils
 #gw needed by the intltool scripts
 BuildRequires: perl-XML-Parser
 #gw if we call aclocal
@@ -47,25 +46,6 @@ GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 %makeinstall_std
 for omf in %buildroot%_datadir/omf/*/{*-??.omf,*-??_??.omf};do
 echo "%lang($(basename $omf|sed -e s/.*-// -e s/.omf//)) $(echo $omf|sed s!%buildroot!!)" >> %name.lang
 done
-
-# menu entry
-mkdir -p $RPM_BUILD_ROOT%{_menudir}
-cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
-?package(%{name}):  \
-  needs="X11" \
-  section="Office/Accessories" \
-  title="Gnome Calculator" \
-  longtitle="Perform calculations"  \
-  command="%{_bindir}/gcalctool" \
-  icon="gcalctool.png"  \
-  startup_notify="true" xdg="true"
-EOF
-desktop-file-install --vendor="" \
-  --remove-category="Application" \
-  --add-category="X-MandrivaLinux-Office-Accessories" \
-  --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
-
-
 
 mkdir -p %buildroot{%_liconsdir,%_miconsdir,%_iconsdir}
 install -m 644 %SOURCE1 %buildroot%_iconsdir/%name.png
@@ -104,9 +84,6 @@ if [ -x %{_bindir}/scrollkeeper-update ]; then %{_bindir}/scrollkeeper-update -q
 %dir %{_datadir}/omf/%{name}
 %{_datadir}/omf/%{name}/%{name}-C.omf
 %{_datadir}/%name
-%{_menudir}/%name
 %{_liconsdir}/%name.png
 %{_iconsdir}/%name.png
 %{_miconsdir}/%name.png
-
-
