@@ -8,7 +8,6 @@ URL: http://calctool.sourceforge.net/
 Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 Source1: gcalctool-32.png
 Source2: gcalctool-16.png
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: gtk2-devel
 BuildRequires: libGConf2-devel
 BuildRequires: libglade2.0-devel
