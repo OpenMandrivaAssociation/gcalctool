@@ -1,13 +1,14 @@
 Summary: GNOME desktop calculator
 Name: gcalctool
 Version: 5.22.1
-Release: %mkrel 1
-License: GPL
+Release: %mkrel 2
+License: GPLv2+
 Group: Graphical desktop/GNOME
 URL: http://calctool.sourceforge.net/
 Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 Source1: gcalctool-32.png
 Source2: gcalctool-16.png
+Patch0: gcalctool-5.22.1-fortify.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: gtk2-devel
 BuildRequires: libGConf2-devel
@@ -32,6 +33,7 @@ precision arithmetic to produce results to a high degree of accuracy.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 
