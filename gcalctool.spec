@@ -59,7 +59,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 if [ -x %{_bindir}/scrollkeeper-update ]; then %{_bindir}/scrollkeeper-update -q || true ; fi
-GCONF_CONFIG_SOURCE=`gconftool-2 --get-default-source` gconftool-2 --makefile-install-rule %{_sysconfdir}/gconf/schemas/gcalctool.schemas > /dev/null
+%post_install_gconf_schemas gcalctool
 %{update_menus}
 touch %{_datadir}/gnome/help/gcalctool/C/gcalctool.html
 
