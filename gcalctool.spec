@@ -64,9 +64,7 @@ if [ -x %{_bindir}/scrollkeeper-update ]; then %{_bindir}/scrollkeeper-update -q
 touch %{_datadir}/gnome/help/gcalctool/C/gcalctool.html
 
 %preun
-if [ "$1" = "0" -a -x %{_bindir}/gconftool-2 ] ; then
- GCONF_CONFIG_SOURCE=`%{_bindir}/gconftool-2 --get-default-source` %{_bindir}/gconftool-2 --makefile-uninstall-rule %{_sysconfdir}/gconf/schemas/gcalctool.schemas > /dev/null
-fi
+%preun_uninstall_gconf_schemas gcalctool
 
 %postun 
 %{clean_menus}
