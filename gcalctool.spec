@@ -58,7 +58,7 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %post
-if [ -x %{_bindir}/scrollkeeper-update ]; then %{_bindir}/scrollkeeper-update -q || true ; fi
+%update_scrollkeeper
 %post_install_gconf_schemas gcalctool
 %{update_menus}
 touch %{_datadir}/gnome/help/gcalctool/C/gcalctool.html
@@ -68,7 +68,7 @@ touch %{_datadir}/gnome/help/gcalctool/C/gcalctool.html
 
 %postun 
 %{clean_menus}
-if [ -x %{_bindir}/scrollkeeper-update ]; then %{_bindir}/scrollkeeper-update -q|| true ; fi
+%clean_scrollkeeper
 
 %files -f %{name}.lang
 %defattr(-,root,root,-)
