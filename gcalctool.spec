@@ -58,17 +58,21 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %post
+%if %mdkversion < 200900
 %update_scrollkeeper
 %post_install_gconf_schemas gcalctool
 %{update_menus}
+%endif
 touch %{_datadir}/gnome/help/gcalctool/C/gcalctool.html
 
 %preun
 %preun_uninstall_gconf_schemas gcalctool
 
+%if %mdkversion < 200900
 %postun 
 %{clean_menus}
 %clean_scrollkeeper
+%endif
 
 %files -f %{name}.lang
 %defattr(-,root,root,-)
