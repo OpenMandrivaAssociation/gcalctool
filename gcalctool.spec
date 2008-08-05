@@ -1,6 +1,6 @@
 Summary: GNOME desktop calculator
 Name: gcalctool
-Version: 5.23.5
+Version: 5.23.6
 Release: %mkrel 1
 License: GPLv2+
 Group: Graphical desktop/GNOME
@@ -18,7 +18,7 @@ BuildRequires: scrollkeeper
 BuildRequires: gnome-doc-utils libxslt-proc
 BuildRequires: intltool
 #gw if we call aclocal
-BuildRequires: automake1.8
+BuildRequires: automake
 Requires(post): scrollkeeper
 Requires(postun): scrollkeeper
 Conflicts: gnome-utils < 2.3.3
@@ -32,7 +32,6 @@ precision arithmetic to produce results to a high degree of accuracy.
 %setup -q
 
 %build
-
 %configure2_5x
 %make
 
