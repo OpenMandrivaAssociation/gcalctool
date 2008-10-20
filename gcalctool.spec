@@ -17,6 +17,8 @@ BuildRequires: bison
 BuildRequires: scrollkeeper
 BuildRequires: gnome-doc-utils libxslt-proc
 BuildRequires: intltool
+#gw libtool dep:
+BuildRequires: dbus-glib-devel
 #gw if we call aclocal
 BuildRequires: automake
 Requires(post): scrollkeeper
