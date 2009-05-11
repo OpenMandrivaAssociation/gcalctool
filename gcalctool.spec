@@ -1,6 +1,6 @@
 Summary: GNOME desktop calculator
 Name: gcalctool
-Version: 5.26.1
+Version: 5.27.1
 Release: %mkrel 1
 License: GPLv2+
 Group: Graphical desktop/GNOME
@@ -11,7 +11,6 @@ Source2: gcalctool-16.png
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: gtk2-devel
 BuildRequires: libGConf2-devel
-BuildRequires: libglade2.0-devel
 BuildRequires: flex
 BuildRequires: bison
 BuildRequires: scrollkeeper
