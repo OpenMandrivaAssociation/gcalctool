@@ -1,7 +1,7 @@
 Summary: GNOME desktop calculator
 Name: gcalctool
 Version: 5.28.0
-Release: %mkrel 1
+Release: %mkrel 2
 License: GPLv2+
 Group: Graphical desktop/GNOME
 URL: http://calctool.sourceforge.net/
@@ -76,7 +76,7 @@ touch %{_datadir}/gnome/help/gcalctool/C/gcalctool.html
 
 %files -f %{name}.lang
 %defattr(-,root,root,-)
-%doc README NEWS ChangeLog AUTHORS 
+%doc README NEWS AUTHORS 
 #TODO
 %{_sysconfdir}/gconf/schemas/*
 %{_bindir}/*
