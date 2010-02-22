@@ -1,6 +1,6 @@
 Summary: GNOME desktop calculator
 Name: gcalctool
-Version: 5.29.90
+Version: 5.29.91
 Release: %mkrel 1
 License: GPLv2+
 Group: Graphical desktop/GNOME
@@ -42,9 +42,9 @@ rm -rf $RPM_BUILD_ROOT %name.lang
 GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 %makeinstall_std
 
 %find_lang %{name} --with-gnome
-for omf in %buildroot%_datadir/omf/*/{*-??.omf,*-??_??.omf};do
-echo "%lang($(basename $omf|sed -e s/.*-// -e s/.omf//)) $(echo $omf|sed s!%buildroot!!)" >> %name.lang
-done
+#for omf in %buildroot%_datadir/omf/*/{*-??.omf,*-??_??.omf};do
+#echo "%lang($(basename $omf|sed -e s/.*-// -e s/.omf//)) $(echo $omf|sed s!%buildroot!!)" >> %name.lang
+#done
 
 mkdir -p %buildroot{%_liconsdir,%_miconsdir,%_iconsdir}
 install -m 644 %SOURCE1 %buildroot%_iconsdir/%name.png
@@ -83,8 +83,8 @@ touch %{_datadir}/gnome/help/gcalctool/C/gcalctool.html
 %{_bindir}/*
 %{_mandir}/man1/*
 %{_datadir}/applications/*
-%dir %{_datadir}/omf/%{name}
-%{_datadir}/omf/%{name}/%{name}-C.omf
+#%dir %{_datadir}/omf/%{name}
+#%{_datadir}/omf/%{name}/%{name}-C.omf
 %{_datadir}/%name
 %{_liconsdir}/%name.png
 %{_iconsdir}/%name.png
