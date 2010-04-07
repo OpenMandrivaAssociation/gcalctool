@@ -23,6 +23,7 @@ BuildRequires: intltool
 BuildRequires: dbus-glib-devel
 #gw if we call aclocal
 BuildRequires: automake
+BuildRequires: gnome-common
 Requires(post): scrollkeeper
 Requires(postun): scrollkeeper
 Conflicts: gnome-utils < 2.3.3
