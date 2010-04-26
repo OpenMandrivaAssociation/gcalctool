@@ -1,15 +1,13 @@
 Summary: GNOME desktop calculator
 Name: gcalctool
-Version: 5.30.0
-Release: %mkrel 2
+Version: 5.30.1
+Release: %mkrel 1
 License: GPLv2+
 Group: Graphical desktop/GNOME
 URL: http://calctool.sourceforge.net/
 Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 Source1: gcalctool-32.png
 Source2: gcalctool-16.png
-# (fc) 5.30.0-2mdv fix missing translations (Mdv bug #58491) (GIT)
-Patch0: gcalctool-5.30.0-fixtranslation.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: gtk2-devel
 BuildRequires: libGConf2-devel
@@ -35,10 +33,6 @@ precision arithmetic to produce results to a high degree of accuracy.
 
 %prep
 %setup -q
-%patch0 -p1 -b .missing-translations
-
-#needed by patch0
-autoreconf
 
 %build
 %configure2_5x
