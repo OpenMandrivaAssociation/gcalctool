@@ -1,6 +1,6 @@
 Summary: GNOME desktop calculator
 Name: gcalctool
-Version: 5.30.2
+Version: 5.31.5
 Release: %mkrel 1
 License: GPLv2+
 Group: Graphical desktop/GNOME
@@ -10,6 +10,7 @@ Source1: gcalctool-32.png
 Source2: gcalctool-16.png
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: gtk2-devel
+BuildRequires: glib2-devel >= 2.25
 BuildRequires: libGConf2-devel
 BuildRequires: libsoup-devel
 BuildRequires: flex
@@ -40,7 +41,7 @@ precision arithmetic to produce results to a high degree of accuracy.
 
 %install
 rm -rf $RPM_BUILD_ROOT %name.lang
-GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 %makeinstall_std
+%makeinstall_std
 
 %find_lang %{name} --with-gnome
 #for omf in %buildroot%_datadir/omf/*/{*-??.omf,*-??_??.omf};do
@@ -60,33 +61,19 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %post
-%if %mdkversion < 200900
-%update_scrollkeeper
-%post_install_gconf_schemas gcalctool
-%{update_menus}
-%endif
 touch %{_datadir}/gnome/help/gcalctool/C/gcalctool.html
-
-%preun
-%preun_uninstall_gconf_schemas gcalctool
-
-%if %mdkversion < 200900
-%postun 
-%{clean_menus}
-%clean_scrollkeeper
-%endif
 
 %files -f %{name}.lang
 %defattr(-,root,root,-)
 %doc README NEWS AUTHORS 
 #TODO
-%{_sysconfdir}/gconf/schemas/*
 %{_bindir}/*
 %{_mandir}/man1/*
 %{_datadir}/applications/*
 #%dir %{_datadir}/omf/%{name}
 #%{_datadir}/omf/%{name}/%{name}-C.omf
 %{_datadir}/%name
+%_datadir/glib-2.0/schemas/org.gnome.gcalctool.gschema.xml
 %{_liconsdir}/%name.png
 %{_iconsdir}/%name.png
 %{_miconsdir}/%name.png
