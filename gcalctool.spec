@@ -11,6 +11,7 @@ BuildRequires:	bison
 BuildRequires:	flex
 BuildRequires:	gnome-doc-utils
 BuildRequires:	intltool
+BuildRequires:	itstool
 BuildRequires:	xsltproc
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gtk+-3.0)
