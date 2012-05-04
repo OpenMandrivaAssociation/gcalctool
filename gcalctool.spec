@@ -35,6 +35,10 @@ precision arithmetic to produce results to a high degree of accuracy.
 %makeinstall_std
 
 %find_lang %{name} --with-gnome
+for l in C bg ca cs de el es eu fi fr gl hu it ja ko lv oc pt_BR ru sl sv te zh_CN zh_HK zh_TW; do
+	echo "%%dir %%{_datadir}/help/$l"
+	echo "%%lang($l) %%{_datadir}/help/$l/%%{name}"
+done >> %{name}.lang
 
 %files -f %{name}.lang
 %doc README NEWS AUTHORS 
