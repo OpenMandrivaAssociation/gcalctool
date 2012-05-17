@@ -9,11 +9,11 @@ Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.xz
 
 BuildRequires:	bison
 BuildRequires:	flex
-BuildRequires:	gnome-doc-utils
 BuildRequires:	intltool
 BuildRequires:	itstool
 BuildRequires:	xsltproc
 BuildRequires:	pkgconfig(glib-2.0)
+BuildRequires:	pkgconfig(gnome-doc-utils)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(libxml-2.0)
 
