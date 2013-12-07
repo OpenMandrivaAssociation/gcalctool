@@ -3,7 +3,7 @@
 Summary:	GNOME desktop calculator
 Name:		gcalctool
 Version:	6.6.2
-Release:	3
+Release:	4
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
 URL:		http://calctool.sourceforge.net/
