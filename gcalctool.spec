@@ -6,7 +6,7 @@ Version:	6.6.2
 Release:	7
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
-URL:		http://calctool.sourceforge.net/
+URL:		https://calctool.sourceforge.net/
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
 
 BuildRequires:	bison
